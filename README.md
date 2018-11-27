@@ -1,11 +1,20 @@
 # splunk4aem
 This project should help easily set-up a SPLUNK-Docker instance to debug AEM
 
+## TL;DR   
+You should be able to create a local instance of SPLUNK for log analysis using these 3 simple commands:
+
+```bash
+git clone https://github.com/rwunsch/splunk4aem.git
+cd splunk4aem
+docker-compose up
+```
+
 ## How to use this Splunk instance  
 Given you have installed docker (and docker-compose).  
 Simply checkout this repository, and change into the new folder:
 ```bash
-git clone git@github.com:rwunsch/splunk4aem.git
+git clone https://github.com/rwunsch/splunk4aem.git
 cd splunk4aem
 ```
 The folder structure will be something like:
@@ -35,9 +44,10 @@ On the web-interface you can start
 
 ## How to import/ingest logs into SPLUNK   
 
-
-
-
+### Direct ingestion through "splunk-logs-share" folder   
+Simply drop logs into the "splunk-logs-share" folder, a subfolder in the git-repository.
+SPLUNK will ingest any log dropped into this folder.
+WARN: the logs will be deleted from the folder once 
 
 ### Upload files through website  
 You can upload files through the website:
