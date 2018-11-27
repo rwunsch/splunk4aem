@@ -1,12 +1,10 @@
 version: '3'
 
-
 services:
     splunk:
         build: 
             context: .
             dockerfile: Dockerfile
-        #image: docker-tam-dev.dr.corp.adobe.com/splunk4aem
         image: splunk/splunk
         environment:
             - SPLUNK_START_ARGS=--accept-license
