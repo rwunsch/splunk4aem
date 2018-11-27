@@ -33,6 +33,16 @@ Once the log-file is ingested, the log-file will be removed/deleted (!).
 
 On the web-interface you can start
 
+## How to import/ingest logs into SPLUNK   
+
+
+
+
+
+### Upload files through website  
+You can upload files through the website:
+> http://localhost:8000/en-US/manager/search/adddatamethods/selectsource?input_mode=0
+
 
 ## Resources  
 - https://www.splunk.com/blog/2018/01/17/hands-on-lab-sandboxing-with-splunk-with-docker.html
@@ -43,6 +53,12 @@ On the web-interface you can start
 ## Caveats
 ### Docker for Windows and Cisco VPN   
 Docker for Windows cannot access local folders (like the "splunk-logs-share"), as long as the Cisco VPN is being used.
+
+#### First Workaround (did work forme)
+Use the OpenConnect VPN client instead of the Cisco Anyconnect VPN Client:  
+> https://github.com/openconnect/openconnect-gui/releases
+
+#### Second Workaround - change network (did not work for me)    
 > https://lukerogers.com/2018/09/22/docker-file-sharing-w-cisco-vpn/   
 
 The blog above describes the issue, and proposes a solution (to set the network Docker communicates on to a private network). 
