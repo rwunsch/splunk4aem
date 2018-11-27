@@ -1,0 +1,21 @@
+version: '3'
+
+
+services:
+    splunk:
+        build: 
+            context: .
+            dockerfile: Dockerfile
+        image: docker-tam-dev.dr.corp.adobe.com/splunk4aem
+        environment:
+            - SPLUNK_START_ARGS=--accept-license
+            - SPLUNK_PASSWORD=password
+            - SPLUNK_ROLE=splunk_standalone
+        container_name: splunk
+        ports:
+            - "8000:8000"
+        volumes:
+            #- "./splunk-etc:/opt/splunk/etc"
+            - "./splunk-logs-share:/opt/splunk/var/spool/splunk"
+        
+        
